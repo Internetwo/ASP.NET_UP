@@ -1,0 +1,24 @@
+该控件兼容性比较好！很多浏览器如IE8,9,10、谷歌 火狐、QQ等浏览器，都是兼容的。
+第一步：只需要在aspx文件的head标签中粘贴：
+<script src="./dateCalendar/WdatePicker.js"></script>    
+即导入WdatePicker.js文件。
+第二步：
+在textbox文本框控件的onclick事件加入
+onclick="WdatePicker( {el:this,dateFmt:'yyyy-MM-dd HH:mm:ss'} )" 这段代码就就可以了。
+如：
+<asp:TextBox ID="TextBox1" runat="server" 
+            onclick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd HH:mm:ss',onpicked:null})" 
+            ></asp:TextBox>
+<asp:TextBox ID="TextBox2" runat="server" 
+            onclick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd',onpicked:null})" 
+            ></asp:TextBox>  
+<asp:TextBox ID="TextBox1" runat="server" 
+            onclick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd HH:mm:00',onpicked:null})" 
+            ></asp:TextBox>
+
+TextBox1可以选择年月日时分秒
+TextBox2只能选择年月日
+TextBox3可以选择年月日时分（秒是固定的00秒，因为：dateFmt:'yyyy-MM-dd HH:mm:00'）
+
+注意：两个文本框都不能设置为只读，如果是只读，点击按钮刷新时文本框的日期或者时间就不见了。
+ 
